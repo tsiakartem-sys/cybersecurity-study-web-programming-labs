@@ -1,15 +1,15 @@
-function Header({ name, title, navigation }) {
+function Header() {
   return (
     <header>
-      <h1>{name}</h1>
-      <p>{title}</p>
+      <h1>Артем Цяк</h1>
+      <p>Студент спеціальності «Кібербезпека» · Junior Security Enthusiast</p>
       <nav>
         <ul>
-          {navigation.map((link) => (
-            <li key={link.id}>
-              <a href={`#${link.id}`}>{link.label}</a>
-            </li>
-          ))}
+          <li><a href="#about">Про мене</a></li>
+          <li><a href="#skills">Навички</a></li>
+          <li><a href="#experience">Досвід</a></li>
+          <li><a href="#education">Освіта</a></li>
+          <li><a href="#languages">Мови</a></li>
         </ul>
       </nav>
     </header>

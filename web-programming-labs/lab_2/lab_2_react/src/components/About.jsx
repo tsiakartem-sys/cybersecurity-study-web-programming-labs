@@ -1,10 +1,16 @@
-function About({ paragraphs }) {
+function About() {
   return (
     <section id="about">
       <h2>Про мене</h2>
-      {paragraphs.map((text, index) => (
-        <p key={index}>{text}</p>
-      ))}
+      <p>
+        Студент Національного університету «Львівська політехніка», який вивчає
+        <strong> кібербезпеку</strong> та <strong>вебтехнології</strong>.
+        Цікавлюся безпекою вебзастосунків, мережами та автоматизацією задач за допомогою Python.
+      </p>
+      <p>
+        Шукаю можливість пройти стажування, щоб застосувати знання на практиці
+        та розвиватися в напрямі <em>Application Security</em>.
+      </p>
     </section>
   );
 }
