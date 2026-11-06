@@ -1,0 +1,307 @@
+/* ==========================================================================
+   Лабораторна робота №3 (частина 1): стилі резюме
+   Структура файлу:
+   1. Змінні
+   2. Базові стилі (box-sizing, селектори тегів)
+   3. Шапка та навігація
+   4. Макет сторінки (CSS Grid)
+   5. Картки та компоненти (селектори класів, ID)
+   6. Посилання (селектори атрибутів)
+   7. Підвал (Flexbox)
+   8. Адаптивність (медіазапит)
+   ========================================================================== */
+
+
+/* 1. Змінні
+   -------------------------------------------------------------------------- */
+:root {
+  --color-text: #1e293b;
+  --color-muted: #64748b;
+  --color-bg: #f1f5f9;
+  --color-surface: #ffffff;
+  --color-border: #e2e8f0;
+  --color-dark: #0f172a;
+  --color-accent: #0f766e;
+  --color-accent-dark: #115e59;
+  --color-accent-light: #99f6e4;
+  --radius: 12px;
+}
+
+
+/* 2. Базові стилі
+   -------------------------------------------------------------------------- */
+
+/* box-sizing: border-box — width/height включають padding і border,
+   тому розміри блоків легко передбачити */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Селектори тегів */
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 2.5rem;
+}
+
+h2 {
+  margin: 0 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--color-accent);
+  font-size: 1.5rem;
+}
+
+h3 {
+  margin: 20px 0 8px;
+  font-size: 1.1rem;
+}
+
+p {
+  margin: 0 0 12px;
+}
+
+ul,
+ol {
+  margin: 0 0 12px;
+  padding-left: 24px;
+}
+
+time {
+  color: var(--color-muted);
+}
+
+
+/* 3. Шапка та навігація
+   -------------------------------------------------------------------------- */
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 24px;
+  padding: 32px 24px;
+  background: linear-gradient(135deg, var(--color-dark), var(--color-accent-dark));
+  color: #ffffff;
+}
+
+.site-header h1 {
+  margin-bottom: 4px;
+}
+
+.site-header__subtitle {
+  margin: 0;
+  color: var(--color-accent-light);
+}
+
+.main-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-nav a {
+  display: block;
+  padding: 6px 16px;
+  border: 1px solid var(--color-accent-light);
+  border-radius: 999px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/* Псевдокласи: наведення, фокус з клавіатури, натискання */
+.main-nav a:hover,
+.main-nav a:focus-visible {
+  background-color: var(--color-accent-light);
+  color: var(--color-dark);
+}
+
+.main-nav a:active {
+  transform: scale(0.96);
+}
+
+
+/* 4. Макет сторінки (CSS Grid)
+   -------------------------------------------------------------------------- */
+.layout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+/* ID-селектори: ці секції займають обидва стовпці */
+#about,
+#languages {
+  grid-column: 1 / -1;
+}
+
+
+/* 5. Картки та компоненти
+   -------------------------------------------------------------------------- */
+.card {
+  padding: 24px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background-color: var(--color-surface);
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Список-«теги» (Flexbox) */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.tag-list li {
+  padding: 4px 12px;
+  border: 1px solid var(--color-accent-light);
+  border-radius: 999px;
+  background-color: #f0fdfa;
+  color: var(--color-accent-dark);
+  font-size: 0.9rem;
+}
+
+/* Запис про досвід / освіту */
+.entry {
+  margin-bottom: 20px;
+  padding-left: 16px;
+  border-left: 4px solid var(--color-accent);
+}
+
+.entry h3 {
+  margin-top: 0;
+}
+
+.entry__date {
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+/* Псевдокласи для останніх елементів: прибираємо зайві відступи */
+.entry:last-child,
+.card > :last-child {
+  margin-bottom: 0;
+}
+
+
+/* 6. Посилання (селектори атрибутів)
+   -------------------------------------------------------------------------- */
+a {
+  color: var(--color-accent);
+}
+
+a:hover {
+  color: var(--color-accent-dark);
+}
+
+/* Посилання на пошту */
+a[href^="mailto:"] {
+  font-weight: 600;
+}
+
+/* Посилання, що відкриваються в новій вкладці, отримують стрілку */
+a[target="_blank"]::after {
+  content: " ↗";
+  font-size: 0.85em;
+}
+
+
+/* 7. Підвал (Flexbox)
+   -------------------------------------------------------------------------- */
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 32px 24px;
+  background-color: var(--color-dark);
+  color: #cbd5e1;
+}
+
+.site-footer h2 {
+  border-bottom-color: var(--color-accent-light);
+  color: #ffffff;
+}
+
+.site-footer ul {
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer a {
+  color: var(--color-accent-light);
+}
+
+.site-footer address {
+  font-style: normal;
+}
+
+.site-footer__meta {
+  text-align: right;
+}
+
+
+/* 8. Адаптивність
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  /* Шапка: елементи в стовпчик, по центру */
+  .site-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .main-nav ul {
+    justify-content: center;
+  }
+
+  /* Сітка: один стовпець замість двох */
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .site-footer {
+    flex-direction: column;
+  }
+
+  .site-footer__meta {
+    text-align: left;
+  }
+}
