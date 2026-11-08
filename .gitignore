@@ -1,0 +1,35 @@
+# Залежності та результати збірки (Node.js / Vite)
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Логи
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Змінні оточення (можуть містити секрети)
+.env
+.env.*
+!.env.example
+
+# Віртуальні оточення та кеш Python
+.venv*/
+venv/
+__pycache__/
+*.pyc
+
+# Редактори та IDE
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.sw?
+
+# Системні файли
+.DS_Store
+Thumbs.db
+desktop.ini

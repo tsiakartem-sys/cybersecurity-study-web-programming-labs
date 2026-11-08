@@ -1,16 +1,36 @@
-# React + Vite
+# Лабораторна робота №2 (частина 2): резюме на React
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Резюме з частини 1 ([`../index.html`](../index.html)), відтворене за допомогою React-компонентів. Проєкт створено шаблоном Vite (`npm create vite@latest`, шаблон React).
 
-Currently, two official plugins are available:
+## Запуск
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm install      # встановити залежності
+npm run dev      # сервер розробки → http://localhost:5173
+```
 
-## React Compiler
+Інші команди:
+- `npm run build` збирає проєкт у `dist/`;
+- `npm run preview` переглядає збірку;
+- `npm run lint` запускає лінтер oxlint.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Структура
 
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+```
+lab_2_react/
+├── index.html           # HTML-сторінка з <div id="root"> — сюди монтується React
+├── vite.config.js       # налаштування Vite (плагін React)
+├── package.json         # залежності та npm-скрипти
+├── public/favicon.svg   # іконка вкладки
+└── src/
+    ├── main.jsx         # точка входу: рендерить <App /> у #root
+    ├── App.jsx          # кореневий компонент, збирає всі секції
+    └── components/
+        ├── Header.jsx       # ім'я, підзаголовок, навігація
+        ├── About.jsx        # «Про мене»
+        ├── Skills.jsx       # навички
+        ├── Experience.jsx   # досвід
+        ├── Education.jsx    # освіта, курси
+        ├── Languages.jsx    # мови
+        └── Footer.jsx       # контакти
+```
