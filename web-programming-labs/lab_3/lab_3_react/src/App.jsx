@@ -10,8 +10,8 @@ function App() {
   return (
     <div className="flex min-h-screen flex-col bg-slate-100 font-sans text-slate-800">
       <Header />
-      {/* Один стовпець на телефоні, два — починаючи з md (768px) */}
-      <main className="mx-auto grid w-full max-w-5xl flex-1 gap-6 px-4 py-8 md:grid-cols-2">
+      {/* Одна колонка: секції йдуть одна під одною по порядку */}
+      <main className="mx-auto grid w-full max-w-3xl flex-1 content-start gap-6 px-4 py-8">
         <About />
         <Skills />
         <Experience />

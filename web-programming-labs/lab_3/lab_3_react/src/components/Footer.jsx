@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <footer className="bg-slate-900 px-6 py-8 text-slate-300">
-      <div className="mx-auto flex max-w-5xl flex-col gap-6 md:flex-row md:items-start md:justify-between">
+      <div className="mx-auto flex max-w-3xl flex-col gap-6 md:flex-row md:items-start md:justify-between">
         <div>
           <h2 className="mb-3 text-xl font-bold text-white">Контакти</h2>
           <address className="not-italic">

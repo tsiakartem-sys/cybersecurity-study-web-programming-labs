@@ -34,7 +34,7 @@ lab_3_react/
 └── src/
     ├── index.css        # @import "tailwindcss";
     ├── main.jsx         # точка входу
-    ├── App.jsx          # макет: Grid (1 колонка, з md — 2)
+    ├── App.jsx          # макет: Grid в одну колонку
     └── components/      # Header, About, Skills, Experience, Education, Languages, Footer
 ```
 
