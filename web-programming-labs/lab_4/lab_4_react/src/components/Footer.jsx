@@ -77,6 +77,9 @@ function Footer() {
           <p>
             <small>&copy; 2026 Артем Цяк</small>
           </p>
+          <p>
+            <small>🚀 Сайт розгорнуто на Vercel (лабораторна №5)</small>
+          </p>
         </div>
       </div>
 
