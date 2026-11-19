@@ -14,6 +14,7 @@
 |---|------|-------|-------------|
 | 2 | HTML та React | [`lab_2`](web-programming-labs/lab_2) | Семантична HTML-розмітка резюме ([`index.html`](web-programming-labs/lab_2/index.html)) і та сама сторінка, розбита на React-компоненти ([`lab_2_react`](web-programming-labs/lab_2/lab_2_react)) |
 | 3 | CSS та Tailwind CSS | [`lab_3`](web-programming-labs/lab_3) | Стилізація HTML-резюме власним CSS ([`styles.css`](web-programming-labs/lab_3/styles.css)) і стилізація React-резюме утилітарними класами Tailwind CSS v4 ([`lab_3_react`](web-programming-labs/lab_3/lab_3_react)) |
+| 4 | JavaScript | [`lab_4`](web-programming-labs/lab_4) | `localStorage` (інформація про ОС і браузер), відгуки з JSONPlaceholder через `fetch`, модальне вікно з формою (Formspree) через 1 хвилину, денна/нічна тема. Версія на чистому JS ([`script.js`](web-programming-labs/lab_4/script.js)) і на React-хуках ([`lab_4_react`](web-programming-labs/lab_4/lab_4_react)) |
 
 ## Структура
 
@@ -26,6 +27,11 @@ web-programming-labs/
     ├── index.html          # резюме з підключеним CSS
     ├── styles.css          # зовнішня таблиця стилів
     └── lab_3_react/        # резюме на React + Tailwind CSS
+└── lab_4/
+    ├── index.html          # резюме + відгуки, модальне вікно, перемикач теми
+    ├── styles.css          # стилі (з нічною темою)
+    ├── script.js           # уся логіка на чистому JavaScript
+    └── lab_4_react/        # те саме на React (useState, useEffect)
 ```
 
 ## Запуск
@@ -35,7 +41,7 @@ web-programming-labs/
 **React-версії.** Потрібен [Node.js](https://nodejs.org/) 20.19+ або 22.12+.
 
 ```bash
-cd web-programming-labs/lab_3/lab_3_react   # або lab_2/lab_2_react
+cd web-programming-labs/lab_4/lab_4_react   # або lab_3/lab_3_react, lab_2/lab_2_react
 npm install      # встановити залежності (один раз)
 npm run dev      # запустити сервер розробки → http://localhost:5173
 ```
@@ -47,4 +53,4 @@ npm run dev      # запустити сервер розробки → http://l
 
 ## Технології
 
-HTML5 · CSS3 (Flexbox, Grid, медіазапити) · JavaScript · React 19 · Vite · Tailwind CSS 4
+HTML5 · CSS3 (Flexbox, Grid, медіазапити) · JavaScript (Fetch API, localStorage) · React 19 · Vite · Tailwind CSS 4
